@@ -27,4 +27,6 @@ OTHER_FILES += \
     Main.qml \
     AudioPlayer.qml \
     AddPodcastDialog.qml \
-    Main.qml
+    Main.qml \
+    ToolBar.qml \
+    AbstractButton.qml

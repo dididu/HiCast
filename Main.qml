@@ -48,59 +48,80 @@ Rectangle {
     anchors.fill: parent
 
     id: main
+    state: "PodcastList"
 
-    PodcastList {
+    ToolBar {
+        id: toolBar
+
         x: 0
         y: 0
+
+        onBack: {
+            if(main.state == "PodcastList") Qt.quit();
+            if(main.state == "EpisodeList") main.state = "PodcastList";
+            if(main.state == "AudioPlayer") main.state = "EpisodeList";
+        }
+    }
+
+    PodcastList {
+        id: podcastListView
+
+        x: 0
+        anchors.top: toolBar.bottom
         width: parent.width
         height: parent.height
 
-        id: podcastlist;
-        mainScreen: main;
+        mainScreen: main
     }
 
 
     EpisodeList
     {
-        id: episodelist;
-        listHeight: parent.height - podcastlist.blockSize
+        id: episodeListView;
 
-        anchors.top:  podcastlist.top
-        anchors.left: podcastlist.right
 
-        //mainScreen: main;
+        listHeight: parent.height - podcastListView.blockSize
+
+        anchors.top:  podcastListView.top
+        anchors.left: podcastListView.right
+
+        mainScreen: main;
     }
 
     AudioPlayer
     {
         id: audioplayer;
 
-        anchors.top:  podcastlist.top
-        anchors.left: episodelist.right
+        anchors.top:  podcastListView.top
+        anchors.left: episodeListView.right
 
-        //mainScreen: main;
+        mainScreen: main;
     }
 
 
     states: [
              State {
                  name: "PodcastList"
-                 PropertyChanges { target: podcastlist; x: 0 }
+                 PropertyChanges { target: podcastListView; x: 0 }
+                 PropertyChanges { target: toolBar; state: "QuitButton" }
+
              },
 
             State {
                 name: "EpisodeList"
-                PropertyChanges { target: podcastlist; x: -podcastlist.width }
+                PropertyChanges { target: podcastListView; x: -podcastListView.width }
+                PropertyChanges { target: toolBar; state: "BackButton" }
             },
 
             State {
                 name: "AudioPlayer"
-                PropertyChanges { target: podcastlist; x: -podcastlist.width*2 }
+                PropertyChanges { target: podcastListView; x: -podcastListView.width*2 }
+                PropertyChanges { target: toolBar; state: "BackButton" }
             }
          ]
 
     transitions: Transition {
-         PropertyAnimation {  property: "x"; duration: 500 }
+         PropertyAnimation {  property: "x"; duration: 300 }
      }
 
 

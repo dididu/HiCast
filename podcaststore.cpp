@@ -16,7 +16,7 @@ PodcastStore::PodcastStore()
 {
     bool ret;
 
-    // Find QSLite driver
+    // Find SQLite driver
     db = QSqlDatabase::addDatabase("QSQLITE");
 
 #ifdef Q_OS_LINUX

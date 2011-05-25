@@ -19,31 +19,46 @@ Rectangle {
         delegate:
             Rectangle {
 
+                id: podcastListDelegate
+
                 width: parent.width
                 height: blockSize
 
                 gradient: Gradient {
-                        GradientStop { position: 0.0; color: Qt.darker("darkGray")}
-                        GradientStop { position: 1.0; color: "Black" }
+                        GradientStop { position: 0.0; color: Qt.darker("darkgray")}
+                        GradientStop { position: 1.0; color: "black" }
                 }
 
+                Image {
+                    id: podcastIcon
+                    anchors.verticalCenter: podcastListDelegate.verticalCenter
+                    anchors.leftMargin: 10
+                    anchors.left: podcastListDelegate.left
+
+                    source: "C:/Users/My Dropbox/Projects/HiCast/media/podcast_icon&32.png"
+                }
+
+
                 Column {
+                    anchors.left: podcastIcon.right
+                    anchors.leftMargin: 10
+
+                    anchors.verticalCenter: podcastListDelegate.verticalCenter
                     spacing: 5
+
                     Text {
-                        x: parent.x + 10
                         text: title
                         font.pixelSize: 20
                         color: "white"
                     }
 
-                    /*
+
                     Text {
-                        x: parent.x + 10
                         text: feed
                         font.pixelSize: 15
                         color: "lightgray"
                     }
-                    */
+
                 }
 
                 MouseArea {

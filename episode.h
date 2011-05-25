@@ -37,8 +37,8 @@
 ** $QT_END_LICENSE$
 **
 ****************************************************************************/
-#ifndef PIECHART_H
-#define PIECHART_H
+#ifndef EPISODE_H
+#define EPISODE_H
 
 #include <QObject>
 //![0]

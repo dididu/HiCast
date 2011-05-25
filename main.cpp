@@ -26,14 +26,13 @@ int main(int argc, char *argv[])
 
     QDeclarativeView view;
     QDeclarativeContext *ctxt = view.rootContext();
-    ctxt->setContextProperty("myModel", &model);
-
-    //view.setSource(QUrl::fromLocalFile("EpisodeList.qml"));
-    //view.setSource(QUrl::fromLocalFile("PodcastList.qml"));
+    ctxt->setContextProperty("myModel", &model);       
 
     view.setSource(QUrl::fromLocalFile("Main.qml"));
-
     view.setResizeMode(QDeclarativeView::SizeRootObjectToView);
+
+    QObject::connect((QObject*)view.engine(), SIGNAL(quit()), &a, SLOT(quit()));
+
 
 #if defined(Q_WS_MAEMO_5)
     view.setGeometry(QRect(0, 0, 800, 480));

@@ -21,7 +21,7 @@ Rectangle {
         width: parent.width
 
         model: xmlModel
-        delegate: EpisodeDelegate { mainScreen: parent.parent.mainScreen }
+        delegate: EpisodeDelegate { mainScreen: episodeListView.mainScreen }
     }
 
     XmlListModel {

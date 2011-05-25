@@ -1,0 +1,6 @@
+*.pro.user
+*.exe
+*.o
+moc/
+debug/
+release/
