@@ -5,29 +5,21 @@ Rectangle {
     property Rectangle mainScreen
     property int blockSize: 80
 
-
-    height: blockSize
-    width: parent.width
-
     color: "black"
 
     AddPodcastDialog {id: addPodcastDialog; width: 200; height: 200;  }
-
 
     ListView {
         id: podcastList
 
         anchors { fill: parent; }
 
-        orientation: ListView.Horizontal
-
-
         model: myModel
 
         delegate:
             Rectangle {
 
-                width: blockSize
+                width: parent.width
                 height: blockSize
 
                 gradient: Gradient {
@@ -63,7 +55,7 @@ Rectangle {
         footer:
             Rectangle {
 
-                width: blockSize
+                width: parent.width
                 height: blockSize
 
                 gradient: Gradient {

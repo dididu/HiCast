@@ -49,7 +49,60 @@ Rectangle {
 
     id: main
 
-    EpisodeList {id: episodelist; listHeight: parent.height - podcastlist.blockSize }
+    PodcastList {
+        x: 0
+        y: 0
+        width: parent.width
+        height: parent.height
 
-    PodcastList {id: podcastlist; visible: true; mainScreen: main; anchors.top: episodelist.bottom}
+        id: podcastlist;
+        mainScreen: main;
+    }
+
+
+    EpisodeList
+    {
+        id: episodelist;
+        listHeight: parent.height - podcastlist.blockSize
+
+        anchors.top:  podcastlist.top
+        anchors.left: podcastlist.right
+
+        //mainScreen: main;
+    }
+
+    AudioPlayer
+    {
+        id: audioplayer;
+
+        anchors.top:  podcastlist.top
+        anchors.left: episodelist.right
+
+        //mainScreen: main;
+    }
+
+
+    states: [
+             State {
+                 name: "PodcastList"
+                 PropertyChanges { target: podcastlist; x: 0 }
+             },
+
+            State {
+                name: "EpisodeList"
+                PropertyChanges { target: podcastlist; x: -podcastlist.width }
+            },
+
+            State {
+                name: "AudioPlayer"
+                PropertyChanges { target: podcastlist; x: -podcastlist.width*2 }
+            }
+         ]
+
+    transitions: Transition {
+         PropertyAnimation {  property: "x"; duration: 500 }
+     }
+
+
+
 }

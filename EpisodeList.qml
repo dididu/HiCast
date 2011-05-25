@@ -5,6 +5,8 @@ Rectangle {
 //    signal getEpisodeStatus; // new / partly listened / listened
 //    function updateEpisodeStatus(txt) { episodeStatus = txt }  // slot
 
+    property Rectangle mainScreen
+
     property string episodeStatus: "--"
     property int listHeight: 200
 
@@ -15,13 +17,11 @@ Rectangle {
     ListView {
         id: episodeList
 
-        //anchors.fill: parent
         height: listHeight
         width: parent.width
 
         model: xmlModel
-        delegate: EpisodeDelegate { }
-        //clip: true
+        delegate: EpisodeDelegate { mainScreen: parent.parent.mainScreen }
     }
 
     XmlListModel {

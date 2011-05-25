@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
 
     //view.setSource(QUrl::fromLocalFile("EpisodeList.qml"));
     //view.setSource(QUrl::fromLocalFile("PodcastList.qml"));
+
     view.setSource(QUrl::fromLocalFile("Main.qml"));
 
     view.setResizeMode(QDeclarativeView::SizeRootObjectToView);

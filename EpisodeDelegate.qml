@@ -3,6 +3,8 @@ import PodcastLib 1.0
 
 Rectangle {
 
+    property Rectangle mainScreen
+
     Episode {
 
         id: episode
@@ -25,7 +27,7 @@ Rectangle {
     MouseArea {
            anchors.fill: parent
            onClicked: {
-               episodeDelegate.state = episodeDelegate.state=='Details'?'Normal':'Details';
+               mainScreen.state = "AudioPlayer"
            }
     }
 
@@ -79,35 +81,8 @@ Rectangle {
                 Text {
                     color: "white"
                     text: mp3Url
-                }
-
-                AudioPlayer { width: episodeDelegate.width - 10}
+                }         
             }
-        }
-
-
-
-
-
-    }
-
-    states: [State {
-                    name: "Details"
-                    PropertyChanges { target: episodeDelegate; height: 150}
-                    PropertyChanges { target: episodeDetails; opacity: 1.0}
-                    PropertyChanges { target: gradientStop1; color: "darkBlue" }
-             },
-
-             State {
-                    name: "Normal"
-                    PropertyChanges { target: episodeDelegate; height: 40}
-             }
-    ]
-
-    transitions: Transition {
-        // Make the state changes smooth
-        ParallelAnimation {
-            NumberAnimation { duration: 300; properties: "opacity,x,contentY,height,width" }
         }
     }
 }
