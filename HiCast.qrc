@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/new/qml">
+        <file>ToolBar.qml</file>
+        <file>AbstractButton.qml</file>
+        <file>AddPodcastDialog.qml</file>
+        <file>AudioPlayer.qml</file>
+        <file>EpisodeDelegate.qml</file>
+        <file>EpisodeList.qml</file>
+        <file>Main.qml</file>
+        <file>PodcastList.qml</file>
+    </qresource>
+</RCC>

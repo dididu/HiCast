@@ -4,3 +4,4 @@
 moc/
 debug/
 release/
+*.pro.user

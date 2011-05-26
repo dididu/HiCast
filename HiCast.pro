@@ -30,3 +30,6 @@ OTHER_FILES += \
     Main.qml \
     ToolBar.qml \
     AbstractButton.qml
+
+RESOURCES += \
+    HiCast.qrc
