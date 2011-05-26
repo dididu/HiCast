@@ -17,7 +17,7 @@ Rectangle {
     AbstractButton {
         id: backButton
         anchors.right: parent.right
-        buttonImage: "C:/Users/My Dropbox/Projects/HiCast/media/on-off_icon&48.png"
+        buttonImage: "/media/on-off_icon&48.png"
 
         onClicked: toolbarComponent.back();
     }

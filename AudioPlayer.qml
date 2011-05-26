@@ -17,7 +17,7 @@ Rectangle {
         y: 26
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
-        source: "media/media-playback-start.svg"
+        source: "/media/media-playback-start.svg"
     }
 
     Item {

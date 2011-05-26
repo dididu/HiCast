@@ -27,7 +27,7 @@ Rectangle {
     XmlListModel {
          id: xmlModel
          //source: "http://feeds.rucast.net/radio-t"
-         source: "radio-t.xml"
+         source: "file://radio-t.xml"
          query: "/rss/channel/item"
 
          XmlRole { name: "title"; query: "title/string()" }

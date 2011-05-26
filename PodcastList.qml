@@ -35,7 +35,7 @@ Rectangle {
                     anchors.leftMargin: 10
                     anchors.left: podcastListDelegate.left
 
-                    source: "C:/Users/My Dropbox/Projects/HiCast/media/podcast_icon&32.png"
+                    source: "podcast_icon&32.png"
                 }
 
 

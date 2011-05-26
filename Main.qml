@@ -73,7 +73,7 @@ Rectangle {
 
         mainScreen: main
     }
-
+/*
 
     EpisodeList
     {
@@ -98,7 +98,7 @@ Rectangle {
         mainScreen: main;
     }
 
-
+*/
     states: [
              State {
                  name: "PodcastList"

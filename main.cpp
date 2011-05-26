@@ -3,7 +3,6 @@
 #include <QDeclarativeView>
 #include <QDeclarativeContext>
 
-
 #include "episode.h"
 #include "podcaststore.h"
 #include "podcastlistmodel.h"
@@ -28,7 +27,7 @@ int main(int argc, char *argv[])
     QDeclarativeContext *ctxt = view.rootContext();
     ctxt->setContextProperty("myModel", &model);       
 
-    view.setSource(QUrl::fromLocalFile("Main.qml"));
+    view.setSource(QUrl("qrc:/qml/Main.qml"));
     view.setResizeMode(QDeclarativeView::SizeRootObjectToView);
 
     QObject::connect((QObject*)view.engine(), SIGNAL(quit()), &a, SLOT(quit()));
