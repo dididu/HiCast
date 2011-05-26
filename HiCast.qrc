@@ -10,10 +10,10 @@
         <file>PodcastList.qml</file>
     </qresource>
     <qresource prefix="/">
-        <file>media/undo_icon&amp;48.png</file>
+        <file>media/undo_icon-48.png</file>
         <file>media/media-playback-start.svg</file>
         <file>media/media-playback-stop.svg</file>
-        <file>media/on-off_icon&amp;48.png</file>
-        <file>media/podcast_icon&amp;32.png</file>
+        <file>media/on-off_icon-48.png</file>
+        <file>media/podcast_icon-32.png</file>
     </qresource>
 </RCC>

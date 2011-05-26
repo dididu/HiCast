@@ -35,7 +35,7 @@ Rectangle {
                     anchors.leftMargin: 10
                     anchors.left: podcastListDelegate.left
 
-                    source: "podcast_icon&32.png"
+                    source: "/media/podcast_icon-32.png"
                 }
 
 

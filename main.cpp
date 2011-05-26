@@ -14,14 +14,14 @@ int main(int argc, char *argv[])
     qmlRegisterType<Episode>("PodcastLib", 1, 0, "Episode");
 
     PodcastListModel model;
-/*
+
     model.addPodcast(Podcast("RT1", "http://feed1here"));
     model.addPodcast(Podcast("RT2", "http://feed2here"));
     model.addPodcast(Podcast("RT3", "http://feed3here"));
 
-    model.saveModel(QString("hicast.dat"));
-*/
-    model.loadModel(QString("hicast.dat"));
+//    model.saveModel(QString("hicast.dat"));
+
+    //model.loadModel(QString("hicast.dat"));
 
     QDeclarativeView view;
     QDeclarativeContext *ctxt = view.rootContext();

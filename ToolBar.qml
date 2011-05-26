@@ -17,7 +17,7 @@ Rectangle {
     AbstractButton {
         id: backButton
         anchors.right: parent.right
-        buttonImage: "/media/on-off_icon&48.png"
+        buttonImage: "/media/on-off_icon-48.png"
 
         onClicked: toolbarComponent.back();
     }
@@ -25,12 +25,12 @@ Rectangle {
     states: [
              State {
                  name: "QuitButton"
-                 PropertyChanges { target: backButton; buttonImage: "C:/Users/My Dropbox/Projects/HiCast/media/on-off_icon&48.png" }
+                 PropertyChanges { target: backButton; buttonImage: "/media/on-off_icon-48.png" }
              },
 
             State {
                 name: "BackButton"
-                PropertyChanges { target: backButton; buttonImage: "C:/Users/My Dropbox/Projects/HiCast/media/undo_icon&48.png" }
+                PropertyChanges { target: backButton; buttonImage: "/media/undo_icon-48.png" }
             }
          ]
 }
